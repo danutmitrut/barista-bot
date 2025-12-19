@@ -89,7 +89,7 @@ export default function ChatWidget() {
         text: data.response,
         sender: 'bot',
         timestamp: new Date(),
-        quickReplies: data.quickReplies || [],
+        // Nu mai afișăm quick replies după mesajul inițial
       };
 
       setMessages((prev) => [...prev, botResponse]);
@@ -212,7 +212,7 @@ export default function ChatWidget() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Scrie un mesaj..."
-                className="flex-1 px-4 py-3 rounded-full border-2 border-gray-200 focus:border-[#14B8A6] focus:outline-none text-sm"
+                className="flex-1 px-4 py-3 rounded-full border-2 border-gray-200 focus:border-[#14B8A6] focus:outline-none text-sm text-gray-900 placeholder:text-gray-400"
               />
               <button
                 onClick={() => handleSendMessage()}
